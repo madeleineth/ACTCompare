@@ -1,0 +1,5 @@
+# From ACTCompare, (c) 2010 Madeleine Thompson
+# $Id: NAMESPACE 1822 2010-10-18 22:02:28Z mthompson $
+
+export(act.compare.plot, act.ci.plot, act.method.compare,
+       generate.act.series, all.methods)
