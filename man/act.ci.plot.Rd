@@ -1,5 +1,4 @@
 % From ACTCompare, (c) 2010 Madeleine Thompson
-% $Id: act.ci.plot.Rd 1847 2010-10-19 20:58:15Z mthompson $
 
 \name{act.ci.plot}
 

@@ -1,5 +1,4 @@
 # From ACTCompare, (c) 2010 Madeleine Thompson
-# $Id: methods.R 1878 2010-10-27 13:28:57Z mthompson $
 
 # This file primarily serves to define all.methods, a list of all
 # ACTCompare-supplied methods to be passed to act.method.compare.
@@ -22,23 +21,40 @@ ims.act <- function(x) {
   is$var.dec / is$gamma0
 }
 
+# Compute the ACT of the vector x, which is assumed to be de-meaned.
+# Uses the initial convex sequence to choose a lag.  See documentation
+# for mcmc::initseq for details.
+
+ics.act1 <- function(x) {
+  is <- initseq(x)
+  is$var.con / is$gamma0
+}
+
+# Given a matrix of Markov chain states, return the longest of their
+# autocorrelation times as computed with the initial convex sequence.
+
+ics.act <- function(X) {
+  A <- apply(as.matrix(X), 2, ics.act1)
+  return(max(A))
+}
+
 # Heidelberger spectrum ACT estimator, see coda::spectrum0 or Heidelberger
 # 1981.  Changing the order does not appear to change performance.
 # Takes a numeric vector of observations and an integer polynomial
 # model order and returns a scalar ACT estimate.
 
-spec.act <- function(x, order=1) {
-  spec <- spectrum0(x, order=order, max.length=max(200,sqrt(length(x))))$spec
+spec.act <- function(x, order = 1) {
+  spec <- spectrum0(x, order = order, max.length = max(200, sqrt(length(x))))$spec
   spec / var(x)
 }
 
 # Batch means.  See Neal 1993 or Geyer 1992 for discussion.  act.pdf
 # has derivations of CI formulae.
 
-batch.act <- function(x, nbatch=max(4, floor(length(x)^0.33))) {
+batch.act <- function(x, nbatch = max(4, floor(length(x)^0.33))) {
   batch.len <- floor(length(x) / nbatch)
-  stopifnot(batch.len>=1)
-  
+  stopifnot(batch.len >= 1)
+
   # Compute batch means.
 
   means <- sapply(1:nbatch,
@@ -51,11 +67,11 @@ batch.act <- function(x, nbatch=max(4, floor(length(x)^0.33))) {
 }
 
 # Collect all methods together.  Omit ips.act and ims.act because
-# they perform indistinguishably from ics.act.  ics.act and ar.act
-# are defined in SamplerCompare.
+# they perform indistinguishably from ics.act.  ar.act is defined in
+# SamplerCompare.
 
 all.methods <- list(
-  `ICS`=ics.act,
-  `AR process`=ar.act,
-  `Spec. fit`=spec.act,
-  `Batch means`=batch.act)
+  `ICS` = ics.act,
+  `AR process` = ar.act,
+  `Spec. fit` = spec.act,
+  `Batch means` = batch.act)

@@ -1,5 +1,4 @@
 # From ACTCompare, (c) 2010 Madeleine Thompson
-# $Id: series.R 1851 2010-10-21 14:03:31Z mthompson $
 
 # Define some series for use with act.method.compare(), exported
 # by way of generate.act.series().  Most series are defined by a

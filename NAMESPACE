@@ -1,5 +1,9 @@
 # From ACTCompare, (c) 2010 Madeleine Thompson
-# $Id: NAMESPACE 1822 2010-10-18 22:02:28Z mthompson $
 
+importFrom(ggplot2, aes_string, element_blank, element_text, facet_wrap, geom_abline, geom_linerange, geom_point, ggplot, qplot, scale_shape_manual, scale_x_log10, scale_y_log10, theme, theme_bw)
+importFrom(coda, spectrum0)
+importFrom(mcmc, initseq)
+importFrom(SamplerCompare, ar.act, arms.sample, make.dist, make.gaussian, schools.dist, stepout.slice.sample, univar.metropolis.sample)
+importFrom(stats, arima.sim, ARMAacf, rnorm, var)
 export(act.compare.plot, act.ci.plot, act.method.compare,
        generate.act.series, all.methods)

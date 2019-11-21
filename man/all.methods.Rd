@@ -1,5 +1,4 @@
 % From ACTCompare, (c) 2010 Madeleine Thompson
-% $Id: all.methods.Rd 1862 2010-10-24 13:13:36Z mthompson $
 
 \name{all.methods}
 

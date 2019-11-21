@@ -1,10 +1,9 @@
 # From ACTCompare, (c) 2010 Madeleine Thompson
-# $Id: compare.R 1824 2010-10-19 02:55:39Z mthompson $
 
 # This function compares a set of ACT methods on a set of series.
 # See ?act.method.compare for more information.
 
-act.method.compare <- function(methods, series, lengths, trace=TRUE) {
+act.method.compare <- function(methods, series, lengths, trace = TRUE) {
 
   # Methods must be named.
 
@@ -37,10 +36,10 @@ act.method.compare <- function(methods, series, lengths, trace=TRUE) {
 
         act <- try(methods[[method]](y), silent=TRUE)
 
-	# Fill in the new record with the returned data if the estimate
-	# was successful.
+        # Fill in the new record with the returned data if the estimate
+        # was successful.
 
-        if (class(act)=='try-error') {          # error
+        if (class(act) == "try-error") {          # error
           # Leave everything NA
           warning(act)
         } else if (is.list(act)) {              # ACT with CI
@@ -52,8 +51,8 @@ act.method.compare <- function(methods, series, lengths, trace=TRUE) {
           new.row$act <- act
         }
 
-	# Add the new record to the data to be returned, and print
-	# out a summary if requested.
+        # Add the new record to the data to be returned, and print
+        # out a summary if requested.
 
         acts <- rbind(acts, new.row)
         if (trace)

@@ -1,5 +1,4 @@
 % From ACTCompare, (c) 2010 Madeleine Thompson
-% $Id: generate.act.series.Rd 1899 2010-10-29 14:18:05Z mthompson $
 
 \name{generate.act.series}
 
