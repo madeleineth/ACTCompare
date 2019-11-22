@@ -4,3 +4,10 @@ ACTCompare is a test suite for procedures for computing autocorrelation times.
 It accompanies the U. Toronto statistics technical report [A Comparison of
 Methods for Computing Autocorrelation Time](https://arxiv.org/abs/1011.0175)
 (2010). It is released under the MIT license.
+
+To install it:
+```
+R> install.packages("devtools")
+R> library("devtools")
+R> devtools::install_github("madeleineth/ACTCompare")
+```
