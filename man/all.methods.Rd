@@ -40,7 +40,7 @@
   6(1):7-11.
 
   Thompson, M. B. (2010). \dQuote{Graphical comparison of MCMC performance.}
-  In preparation.
+  \url{https://arxiv.org/abs/1011.4457}.
 }
 
 \seealso{

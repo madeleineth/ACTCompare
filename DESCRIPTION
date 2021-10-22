@@ -1,13 +1,13 @@
 Package: ACTCompare
 Type: Package
 Title: A Test Suite for Procedures for Computing Autocorrelation Times
-Version: 1.1
-Date: 2019-11-21
+Version: 1.2
+Date: 2021-10-21
 Author: Madeleine Thompson
 Maintainer: Madeleine Thompson <madeleineth@gmail.com>
-Description: A set of test cases for procedures for computing autocorrelation times. This is code to accompany the paper "A Comparison of Methods for Computing Autocorrelation Time" (https://arxiv.org/abs/1011.0175). It hasn't been changed since 2010 except to track evolving R packaging standards, etc.
+Description: A set of test cases for procedures for computing autocorrelation times. This is code to accompany the paper "A Comparison of Methods for Computing Autocorrelation Time" (<arxiv:1011.0175>). It hasn't been changed since 2010 except to track evolving R packaging standards, etc.
 License: MIT + file LICENSE
-Copyright: (c) 2010-2019 Madeleine Thompson
+Copyright: (c) 2010-2021 Madeleine Thompson
 LazyLoad: yes
 Depends: R (>= 2.14.0)
 Imports: coda, ggplot2, mcmc, SamplerCompare
